@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="">
+	<title>Øvelse 9</title>
+</head>
+
+<body>
+	<p>Hvor langt tid tager turen (i timer)?</p>
+	<input type="text" id="distance">
+
+	<button>Beregn Klimaaftryk</button>
+
+	<script>
+		document.querySelector("button").addEventListener("click", buttonClicked);
+
+		function buttonClicked() {
+			let timer = document.querySelector("#distance").value;
+			let co2 = timer * 109;
+			let result;
+
+			if (co2 < 100) {
+				result = "Tæt på Thunberg!";
+			} else if (co2 < 100 || co2 < 200) {
+				result = "Ja ja, du behøver ikke at melde dig ud af Å!";
+			} else if (co2 < 200 || co2 < 600) {
+				result = "Det er godt for turismen i nordeuropa."
+			} else {
+				result = "Nå ja vi kan jo altid kolonisere en anden planet...";
+			}
+			console.log(result);
+		}
+
+	</script>
+
+</body>
+
+</html>
