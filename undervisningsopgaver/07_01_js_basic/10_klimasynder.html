@@ -22,7 +22,9 @@
 			let co2 = timer * 109;
 			let result;
 
-			if (co2 < 100) {
+			if (isNaN(co2)) {
+				result = "Dette er ikke et tal. Prøv igen."
+			} else if (co2 < 100) {
 				result = "Tæt på Thunberg!";
 			} else if (co2 < 100 || co2 < 200) {
 				result = "Ja ja, du behøver ikke at melde dig ud af Å!";
