@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="">
+	<title>Øvelse 12</title>
+</head>
+
+<body>
+	<h2>Er det lovlig?</h2>
+	<p>Gør det nemt at finde ud af om den du vil date er gammel nok, eller måske FOR gammel. <br>Indtast din alder og få svar.</p>
+	<input type="text" id="din_alder">
+	<button>Få svaret</button>
+	<div id="resultat"></div>
+
+	<script>
+		let alder = document.querySelector("#din_alder").value;
+		let over = alder / 2 + 7;
+		let under = (alder - 7) * 2;
+
+		document.querySelector("button").addEventListener("click", buttonClicked);
+
+		function buttonClicked() {
+			console.log(alder);
+			document.querySelector("#resultat").innerHTML = `Du må være sammen med en person mellem ${over} og ${under} år`;
+		}
+
+	</script>
+
+</body>
+
+</html>
