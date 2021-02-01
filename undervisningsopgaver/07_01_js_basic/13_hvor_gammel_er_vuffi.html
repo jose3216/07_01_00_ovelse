@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="">
+	<title>Øvelser 13</title>
+</head>
+
+<body>
+	<h2>Beregn din hunds alder</h2>
+	<p>Indtast alder i menneskeår</p>
+	<input type="text" id="alder">
+
+	<button>Beregn hundealder</button>
+
+	<div id="hundeaar"></div>
+
+	<script>
+		let alder = document.querySelector("#alder").value;
+		let gammel = alder * 7;
+		let ny = 16 * Math.log(alder) + 31;
+
+		document.querySelector("button").addEventListener("click", buttonClicked);
+
+		function buttonClicked() {
+			console.log(alder);
+
+			document.querySelector("#hundeaar").innerHTML = `Efter den gamle beregning er din hund ${gammel} år. Efter den nye beregning er din hun ${ny} år`;
+		}
+
+	</script>
+
+</body>
+
+</html>
