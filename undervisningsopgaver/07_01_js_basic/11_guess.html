@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="">
+	<title>Øvelse 11</title>
+</head>
+
+<body>
+	<h2>Gæt et tal</h2>
+	<input type="text" id="guess">
+
+	<button>Se om du har ramt rigtig!</button>
+
+	<script>
+		tal = Math.round(Math.random() * 20);
+		let result;
+
+		document.querySelector("button").addEventListener("click", buttonClicked);
+
+		function buttonClicked() {
+			let guess = document.querySelector("#guess").value;
+
+			if (isNaN(guess)) {
+				result = "Dette er ikke et tal. Prøv igen."
+			} else if (guess > tal) {
+				result = "Du ramte desværre for højt";
+			} else if (guess < tal) {
+				result = "Du ramte desværre for lavt";
+			} else {
+				result = "TILLYKKE! Du ramte plet!";
+			}
+			console.log(result);
+		}
+
+		//
+		// }
+
+		/*	let length = 30;
+		let bredde = 4;
+		let areal = length * bredde;
+		let result;
+
+		if (areal < 100) {
+			result = "Areal for lille";
+		} else if (areal < 200) {
+			result = "Arealet er ok";
+		} else {
+			result = "Arealet er for stort";
+		}
+		console.log(result);*/
+
+	</script>
+
+</body>
+
+</html>
