@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="">
-	<title>Øvelse 5</title>
+	<title>Areal Fejl</title>
 </head>
 
 <body>
@@ -22,15 +22,20 @@
 		function buttonClicked() {
 			let length = document.querySelector("#length").value;
 			let bredde = document.querySelector("#bredde").value;
-			//			let areal = length * bredde;
-			let result = `Længden er ${length} meter og bredden er ${bredde} meter. Arealet er ${areal(length,bredde)}`;
-
+			let a = areal(length, bredde);
+			let result;
+			if (isNaN(a)) {
+				result = "Dette er ikke et tal. Prøv igen."
+			} else if (a <= 0) {
+				result = "Arealet er mindre end nul. Prøv igen!"
+			} else {
+				result = `Arealet er ${a}`;
+			}
 			console.log(result)
 		}
 
 		function areal(l, b) {
 			return l * b;
-
 		}
 
 	</script>
