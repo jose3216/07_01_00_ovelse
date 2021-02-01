@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="">
+	<title>Øvelse 7</title>
+</head>
+
+<body>
+	<script>
+		let tid = new Date().getHours();
+		console.log(tid);
+		let result;
+
+		if (tid < 5) {
+			result = "Godmorgen";
+		} else if (tid == 10 || tid < 18) {
+			result = "Goddag";
+		} else if (tid == 18 || tid < 24) {
+			result = "Godaften";
+		} else {
+			result = "Godnat";
+		}
+
+		console.log(result);
+
+	</script>
+</body>
+
+</html>
