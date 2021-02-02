@@ -15,13 +15,13 @@
 		let result;
 
 		if (tid < 5) {
+			result = "godnat";
+		} else if (tid < 10) {
 			result = "Godmorgen";
-		} else if (tid == 10 || tid < 18) {
-			result = "Goddag";
-		} else if (tid == 18 || tid < 24) {
-			result = "Godaften";
+		} else if (tid < 18) {
+			result = "Godeftermiddag";
 		} else {
-			result = "Godnat";
+			result = "Godaften";
 		}
 
 		console.log(result);
