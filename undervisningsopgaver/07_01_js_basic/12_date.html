@@ -24,7 +24,13 @@
 
 		function buttonClicked() {
 			console.log(alder);
-			document.querySelector("#resultat").innerHTML = `Du må være sammen med en person mellem ${over} og ${under} år`;
+
+
+			if (alder < 15) {
+				document.querySelector("#resultat").innerHTML = `Du burde slet ikke date!`;
+			} else {
+				document.querySelector("#resultat").innerHTML = `Du må være sammen med en person mellem ${over} og ${under} år`;
+			}
 		}
 
 	</script>
