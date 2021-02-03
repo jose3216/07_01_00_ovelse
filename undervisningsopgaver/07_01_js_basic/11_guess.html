@@ -46,6 +46,8 @@
 
 		function buttonReset() {
 			klik = 0;
+			tal = Math.round(Math.random() * 20);
+			console.log(tal);
 			document.querySelector("#resultat").innerHTML = " ";
 			document.querySelector("#klik").addEventListener("click", buttonClicked);
 		}
