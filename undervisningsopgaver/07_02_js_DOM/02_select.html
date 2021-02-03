@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Øvelse 02.01</title>
+	<title>Øvelse 02.02</title>
 	<style>
 		img {
 			width: 100%;
@@ -35,17 +35,38 @@
 		<h2>Undertitel</h2>
 		<section>
 			<article><img src="img/IMG_7524.jpg" alt="Sne og frostdækket badebro" width="100px">
-				<h3>Koldt skal det være</h3>
+				<h3>Article 1</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam molestias, maxime veritatis amet impedit possimus culpa est repellendus commodi, corporis eos vero iure, fugiat. Quasi necessitatibus enim quam eligendi voluptas!</p>
 			</article>
 			<article><img src="img/IMG_7532.jpg" alt="Solopgang ud over havet ved en badebro" width="100px">
-				<h3>Bade med solen</h3>
+				<h3>Article 2</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt debitis ipsum quo ipsa velit, quas rerum quis placeat, quibusdam facilis, illo omnis id laboriosam, veritatis magnam. Ea consectetur sint, nemo.</p>
 			</article>
 		</section>
 
 		<footer></footer>
+
 		<script>
+			const titel = document.querySelector("header");
+			console.log("titel");
+
+
+			const pic1 = document.querySelector("article:first-child img");
+			console.log("pic1");
+
+			const pic2 = document.querySelector("article:last-child img");
+			console.log("pic2");
+
+			const underover1 = document.querySelector("article:first-child h3");
+			console.log("underover1");
+			const underover2 = document.querySelector("article:last-child h3");
+			console.log("underover2");
+			const tekst1 = document.querySelector("article p");
+			console.log("tekst1");
+
+
+			const tekst2 = document.querySelector("article:last-child p");
+			console.log("tekst2");
 
 		</script>
 
