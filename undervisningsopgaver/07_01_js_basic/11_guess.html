@@ -15,13 +15,15 @@
 	<button id="klik">Se om du har ramt rigtig!</button>
 
 	<p id="resultat"></p>
+	<button id="reset">Spil igen</button>
 
 	<script>
 		tal = Math.round(Math.random() * 20);
 		klik = 0;
 		let result;
 
-		document.querySelector("button").addEventListener("click", buttonClicked);
+		document.querySelector("#klik").addEventListener("click", buttonClicked);
+		document.querySelector("#reset").addEventListener("click", buttonReset);
 
 
 		function buttonClicked() {
@@ -35,11 +37,17 @@
 			} else if (guess < tal) {
 				document.querySelector("#resultat").innerHTML = "Du ramte desværre for lavt";
 			} else {
-				alert `TILLYKKE! Du brugte ${klik} gange på at ramme plet! Kan du gøre det bedre?`;
+				document.querySelector("#resultat").innerHTML = `TILLYKKE! Du brugte ${klik} gange på at ramme plet! Kan du gøre det bedre?`;
 
 			}
 			console.log(result);
 			console.log(klik);
+		}
+
+		function buttonReset() {
+			klik = 0;
+			document.querySelector("#resultat").innerHTML = " ";
+			document.querySelector("#klik").addEventListener("click", buttonClicked);
 		}
 
 	</script>
