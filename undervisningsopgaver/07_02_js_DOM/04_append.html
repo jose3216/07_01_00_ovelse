@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Øvelse 02.02b</title>
+	<style>
+		img {
+			width: 100%;
+		}
+
+		body {
+			margin: 0, auto;
+		}
+
+		h1 {
+			text-align: center;
+		}
+
+		section {
+			display: grid;
+			grid-gap: 20px;
+			grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		}
+
+	</style>
+</head>
+<main>
+
+	<body>
+		<header>
+			Titel
+		</header>
+		<h2>Undertitel</h2>
+		<section>
+			<article><img src="img/IMG_7524.jpg" alt="Sne og frostdækket badebro" width="100px">
+				<h3>Article 1</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam molestias, maxime veritatis amet impedit possimus culpa est repellendus commodi, corporis eos vero iure, fugiat. Quasi necessitatibus enim quam eligendi voluptas!</p>
+			</article>
+			<article><img src="img/IMG_7532.jpg" alt="Solopgang ud over havet ved en badebro" width="100px">
+				<h3>Article 2</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt debitis ipsum quo ipsa velit, quas rerum quis placeat, quibusdam facilis, illo omnis id laboriosam, veritatis magnam. Ea consectetur sint, nemo.</p>
+			</article>
+		</section>
+
+		<footer></footer>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", start);
+
+			function start() {
+				const titel = document.querySelector("header");
+				console.log("titel");
+
+				titel.innerHTML = "<h1> Vinterbadning </h1>";
+
+				const under = document.querySelector("h2");
+				console.log("underoverskrift");
+
+				under.innerHTML = "Smør for sjælen";
+
+				const pic1 = document.querySelector("article:first-child img");
+				console.log("pic1");
+
+				pic1.src = "img/bro.jpg";
+				pic1.alt = "Timelaps billede af skyer, der farer over himelen, mens du kigger ud over havet, hvor en badebro langer ud i vandet";
+
+
+				const pic2 = document.querySelector("article:last-child img");
+				console.log("pic2");
+				pic2.src = "img/sol.jpg";
+				pic2.alt = "Ser du udover havet, hvor solen er på vej op i horisonten. himlen er malet i lilla nuancer.";
+
+
+				const underover1 = document.querySelector("article:first-child h3");
+				console.log("underover1");
+				underover1.innerHTML = "I sne og slud skal vi alle ud";
+
+				const underover2 = document.querySelector("article:last-child h3");
+				console.log("underover2");
+				underover2.innerHTML = "Se solen danse"
+
+				const tekst1 = document.querySelector("article p");
+				console.log("tekst1");
+				tekst1.innerHTML = "Vinterbadning er bare bedst i frostvejr. Man ved at det bliver en dejlig dag, når man selv skal lave et hul for at komme i havet. Følelsen af at sænke sig ned i det kolde et hav af slushice er fantasisk. Isen svøber sig om kroppen og omfavner en, som når man lægger sig under dynen.";
+
+				const tekst2 = document.querySelector("article:last-child p");
+				console.log("tekst2");
+				tekst2.innerHTML = "Der findes to fantastiske tidspunkter på dagen. Solopgang og solnedgang. Der er en magisk ro over havets stilhed i morgentimerne, hvor naturen viser sig fra sit smukkeste jeg. Badning i morgensolen er er det mest terapeutiske du kan udsætte din sjæl for - og den bedste måde at starte dagen.";
+
+
+				let mainSec = document.querySelector("section");
+				let article3 = document.createElement("article");
+				console.log(article3);
+
+				mainSec.appendChild(article3);
+
+
+
+				let pic3 = document.createElement("img");
+
+				pic3.src = "img/kalender.jpg";
+				article3.appendChild(pic3);
+				let underover3 = document.createElement("h3");
+
+				underover3.innerHTML = "Strukturer din badning"
+				article3.appendChild(underover3);
+
+				let tekst3 = document.createElement("p");
+
+				tekst3.innerHTML = "Ved at afsætte tid i kalenderen til at bade, får du rent faktisk gjort det."
+
+				article3.appendChild(tekst3);
+
+			}
+
+		</script>
+
+	</body>
+</main>
+
+</html>
