@@ -5,36 +5,32 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title></title>
-	<link rel="stylesheet" href="">
 </head>
 
 <body>
 
-	<section class="" id="liste">
-		<!--
-		<article>
+	<section class="data_container"></section>
+	<template>
+		<h3></h3>
+		<img src="" alt="">
+		<p class="type">Type: </p>
+		<p class="sted">Levested:</p>
+	</template>
 
-			<h3></h3>
-			<img src="" alt="">
-			<p id="type">Type: </p>
-			<p id="sted">Levested:</p>
 
-		</article>
--->
-	</section>
 	<script>
 		document.addEventListener("DOMContentLoaded", start);
 
 		let dyr = [{
-			"navn": "gris",
-			"type": "pattedyr",
-			"billede": "http://mabe-kea.dk/E19/pics/pig.png",
-			"levested": "svinefarm"
-		}, {
 			"navn": "frø",
 			"type": "padde",
 			"billede": "http://mabe-kea.dk/E19/pics/frog.png",
 			"levested": "sump og søer"
+		}, {
+			"navn": "gris",
+			"type": "pattedyr",
+			"billede": "http://mabe-kea.dk/E19/pics/pig.png",
+			"levested": "svinefarm"
 		}, {
 			"navn": "ræv",
 			"type": "pattedyr",
@@ -57,13 +53,18 @@
 		function start() {
 			console.log("DOM Load");
 
-			const listevisning = document.querySelector("#liste");
+			const container = document.querySelector(".data_container");
+			const dyrTemplate = document.querySelector("template");
 
 			dyr.forEach(dyret => {
-				listevisning.innerHTML += `<p>${dyret.navn} ${dyret.type} ${dyret.levested}</p>`
-			})
 
-			console.log(listevisning);
+				let klon = dyrTemplate.cloneNode(true).content;
+				klon.querySelector("h3").textContent = dyret.navn;
+				klon.querySelector(".type").textContent = `Type: ${dyret.type}`;
+				klon.querySelector(".sted").textContent = `Levested: ${dyret.levested}`;
+				klon.querySelector("img").src = dyret.billede;
+				container.appendChild(klon);
+			})
 
 		}
 

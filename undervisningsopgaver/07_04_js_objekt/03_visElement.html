@@ -32,36 +32,9 @@
 			console.log("DOM Load");
 
 			document.querySelector("h3").textContent = dyr.navn;
-			document.querySelector("#type").textContent = `Type: ${dyr.type}`;
-			document.querySelector("#sted").textContent = `Levested: ${dyr.levested}`;
+			document.querySelector("p").textContent = `Type: ${dyr.type}`;
+			document.querySelector("p:nth-of-type(2nd)").textContent = `Levested: ${dyr.levested}`;
 			document.querySelector("img").src = dyr.billede;
-
-			let dyr = [{
-				"navn": "gris",
-				"type": "pattedyr",
-				"billede": "http://mabe-kea.dk/E19/pics/pig.png",
-				"levested": "svinefarm"
-			}, {
-				"navn": "frø",
-				"type": "padde",
-				"billede": "http://mabe-kea.dk/E19/pics/frog.png",
-				"levested": "sump og søer"
-			}, {
-				"navn": "ræv",
-				"type": "pattedyr",
-				"billede": "http://mabe-kea.dk/E19/pics/fox.png",
-				"levested": "huler i jorden"
-			}, {
-				"navn": "sild",
-				"type": "fisk",
-				"billede": "http://mabe-kea.dk/E19/pics/sild.jpg",
-				"levested": "havet"
-			}, {
-				"navn": "krokodille",
-				"type": "krybdyr",
-				"billede": "http://mabe-kea.dk/E19/pics/kroko.jpg",
-				"levested": "floder"
-			}];
 		}
 
 	</script>
