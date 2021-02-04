@@ -19,6 +19,9 @@
 	<script>
 		document.addEventListener("DOMContentLoaded", start);
 		let nummer = 0;
+		let billede = document.querySelector("img");
+
+		let billeder = ["img1.png", "img2.png", "img3.png", "img4.png", "img5.png", "img6.png", "img7.png", "img8.png"];
 
 		function start() {
 			console.log("DOM loaded");
@@ -26,7 +29,7 @@
 			console.log("over");
 
 			over.innerHTML = "<h1> Tro på det... </h1>";
-			nummer = -1;
+			nummer = 0;
 			console.log(nummer);
 
 			let button = document.querySelector("button");
@@ -34,26 +37,22 @@
 			button.removeEventListener("click", start);
 			button.addEventListener("click", videre);
 
-			let billede = document.querySelector("img");
 
-			let billeder = ["img1.png", "img2.png", "img3.png", "img4.png", "img5.png", "img6.png", "img7.png", "img8.png"];
 
 		}
 
 		function videre() {
-			let billede = document.querySelector("img");
-
-			let billeder = ["img1.png", "img2.png", "img3.png", "img4.png", "img5.png", "img6.png", "img7.png", "img8.png"];
-			this.innerHTML = "videre";
-			nummer++;
+			billede.src = "billeder/" + billeder[nummer];
 			if (nummer < 7) {
-				billede.src = "billeder/" + billeder[nummer];
-				console.log(billeder[nummer]);
+				nummer++;
+				this.textContent = "videre";
 
 			} else {
-				this.innerHTML = "Forfra";
-				this.addEventListener("click", start);
+				nummer = 0;
+				this.textContent = "Forfra";
 			}
+
+
 		}
 
 	</script>
