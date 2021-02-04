@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+
+<body>
+	<article>
+		<h3></h3>
+		<img src="" alt="">
+		<p id="type">Type: </p>
+		<p id="sted">Levested:</p>
+	</article>
+	<script>
+		document.addEventListener("DOMContentLoaded", start);
+
+		let dyr = [{
+			"navn": "gris",
+			"type": "pattedyr",
+			"billede": "http://mabe-kea.dk/E19/pics/pig.png",
+			"levested": "svinefarm"
+		}, {
+			"navn": "frø",
+			"type": "padde",
+			"billede": "http://mabe-kea.dk/E19/pics/frog.png",
+			"levested": "sump og søer"
+		}, {
+			"navn": "ræv",
+			"type": "pattedyr",
+			"billede": "http://mabe-kea.dk/E19/pics/fox.png",
+			"levested": "huler i jorden"
+		}, {
+			"navn": "sild",
+			"type": "fisk",
+			"billede": "http://mabe-kea.dk/E19/pics/sild.jpg",
+			"levested": "havet"
+		}, {
+			"navn": "krokodille",
+			"type": "krybdyr",
+			"billede": "http://mabe-kea.dk/E19/pics/kroko.jpg",
+			"levested": "floder"
+		}];
+
+		console.log(dyr);
+
+		const article = document.querySelector("article");
+
+		function start() {
+			console.log("DOM Load");
+
+			document.querySelector("h3").textContent = dyr.navn;
+			document.querySelector("#type").textContent = `Type: ${dyr.type}`;
+			document.querySelector("#sted").textContent = `Levested: ${dyr.levested}`;
+			document.querySelector("img").src = dyr.billede;
+
+
+		}
+
+	</script>
+</body>
+
+</html>
