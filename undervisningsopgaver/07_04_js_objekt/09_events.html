@@ -1,0 +1,75 @@
+<script></script>
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Øvelse 9 - events</title>
+	<style>
+		img {
+			width: 100%;
+		}
+
+		section {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+			grid-gap: 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<section class="data_container"></section>
+	<template>
+		<article><img src="" alt="">
+			<h3></h3>
+			<p></p>
+		</article>
+	</template>
+	<script>
+		document.addEventListener("DOMContentLoaded", start);
+
+		let events = [{
+			"billede": "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/W6dOqabNhHKBPXxxKKEZRA84-720.jpg",
+			"titel": "A Calling",
+			"info": "Christian Bengston | Danmark | 20 min | 2019"
+		}, {
+			"billede": "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/Q8K1pZrOs03Q0IrDkBwGVu5r-360.jpg",
+			"titel": "A Hole In My Heart",
+			"info": "Mess Peijnenburg | Holland | 9 min | 2015"
+		}, {
+			"billede": "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/hUd4SdGQ8I23ovxWnGtBz4Ck-1920.jpg",
+			"titel": "A Place In The Sun - 110 years after the genocide",
+			"info": "Christian Zipfel | Tyskland | 20 min | 2018"
+		}, {
+			"billede": "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/Zdt2ODEqSVOkNe8nUaSSu8kd.jpg",
+			"titel": "A Tower of Two",
+			"info": "Jacob Krzysztof Glogowski | Danmark | 21 min | 2019"
+		}, {
+			"billede": "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/2iUOgQpixgIQCxyLtY6KiYuU-1280.jpg",
+			"titel": "A Worthy Man",
+			"info": "Kristian Håskjold | Danmark | 19 min | 2018"
+		}];
+
+		console.log(events);
+
+		function start() {
+			console.log("DOM Load");
+
+			const container = document.querySelector(".data_container");
+			const eventTemplate = document.querySelector("template");
+
+			events.forEach(event => {
+
+				let klon = eventTemplate.cloneNode(true).content;
+				klon.querySelector("img").src = event.billede;
+				klon.querySelector("h3").textContent = event.titel;
+				klon.querySelector("p").textContent = event.info;
+				container.appendChild(klon);
+
+			})
+		}
+	</script>
+
+</body></html>
