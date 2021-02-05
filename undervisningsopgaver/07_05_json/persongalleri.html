@@ -1,29 +1,53 @@
 <style></style>
 <script></script>
 <!DOCTYPE html>
-<html lang="">
+<html lang="Persongalleri">
 
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title></title>
-	<style></style>
+	<style>
+		img {
+			max-width: 100%;
+
+		}
+
+		main {
+			margin: 0 auto;
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			grid-gap: 20px;
+		}
+
+		article {
+			padding: 10px;
+			border: solid 3px skyblue;
+			border-radius: 15px;
+		}
+	</style>
 </head>
 
 <body>
 	<main></main>
 
 	<template>
+
 		<article>
-			<img src="" alt="">
-			<h3></h3>
+			<img src="" alt="" class="billede">
+			<h2 class="navn"></h2>
 			<p class="profession"></p>
 			<p class="birth"></p>
+			<p class="hobby"></p>
+			<p></p>
 		</article>
 	</template>
 
 	<script>
+		document.addEventListener("DOMContentLoaded", hentData);
 		const url = "https://persongalleri-5d3e.restdb.io/rest/persongalleri";
+
+		const mediaurl = "https://persongalleri-5d3e.restdb.io/media/";
 
 		const options = {
 			headers: {
@@ -37,24 +61,23 @@
 			vis(json);
 		}
 
+		const main = document.querySelector("main");
+		const template = document.querySelector("template").content;
 
-		//		const main = document.querySelector("#persongalleri");
-		// const template = document.querySelector("template");
-		// const mediaurl = "https://persongalleri-5d3e.restdb.io/media/";
+
 
 		function vis(json) {
 			console.log(json);
-			//			json.forEach(person => {
-			//				const klon = template.cloneNode(true);
-			//				klon.querySelector("img").src = mediaurl + person.billede;
-			//				klon.querySelector("h3").textContent = `${person.fornavn} ${person.efternavn}`;
-			//				klon.querySelector(".professiion").textContent = person.title;
-			//				klon.querySelector(".birth").textContent = person.fødselsdag;
-			//				main.appendChild(klon);
-			//})
+			json.forEach(person => {
+				const klon = template.cloneNode(true);
+				klon.querySelector(".billede").src = mediaurl + person.billede;
+				klon.querySelector(".navn").textContent = `${person.fornavn} ${person.efternavn}`;
+				klon.querySelector(".profession").textContent = person.titel;
+				klon.querySelector(".birth").textContent = `Født: ${person.fødselsdag}`;
+				klon.querySelector(".hobby").textContent = `Får fritiden til at gå med: ${person.hobby}`;
+				main.appendChild(klon);
+			})
 
 		}
-
-		hentData();
 	</script>
 </body></html>
