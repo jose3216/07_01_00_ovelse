@@ -10,6 +10,11 @@
 			display: grid;
 			gap: 10px;
 		}
+
+		article {
+			padding: 10px;
+		}
+
 	</style>
 </head>
 
@@ -27,39 +32,15 @@
 
 
 	<script>
-		document.addEventListener("DOMContentLoaded", start);
+		const fil = "alleDyr.json";
 
-		let dyr = [{
-			"navn": "frø",
-			"type": "padde",
-			"billede": "http://mabe-kea.dk/E19/pics/frog.png",
-			"levested": "sump og søer"
-		}, {
-			"navn": "gris",
-			"type": "pattedyr",
-			"billede": "http://mabe-kea.dk/E19/pics/pig.png",
-			"levested": "svinefarm"
-		}, {
-			"navn": "ræv",
-			"type": "pattedyr",
-			"billede": "http://mabe-kea.dk/E19/pics/fox.png",
-			"levested": "huler i jorden"
-		}, {
-			"navn": "sild",
-			"type": "fisk",
-			"billede": "http://mabe-kea.dk/E19/pics/sild.jpg",
-			"levested": "havet"
-		}, {
-			"navn": "krokodille",
-			"type": "krybdyr",
-			"billede": "http://mabe-kea.dk/E19/pics/kroko.jpg",
-			"levested": "floder"
-		}];
+		async function hentdata(fil) {
+			const result = await fetch(fil);
+			const json = await result.json();
+			vis(json);
+		}
 
-		console.log(dyr);
-
-		function start() {
-			console.log("DOM Load");
+		function vis(dyr) {
 
 			const container = document.querySelector(".data_container");
 			const dyrTemplate = document.querySelector("template");
@@ -75,9 +56,11 @@
 				container.appendChild(klon);
 			})
 
-
-
-
 		}
+
+		hentdata(fil);
+
 	</script>
-</body></html>
+</body>
+
+</html>
