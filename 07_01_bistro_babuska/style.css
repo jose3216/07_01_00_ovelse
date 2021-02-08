@@ -1,0 +1,36 @@
+img {
+	max-width: 100%;
+}
+
+nav {
+	margin-bottom: 5em;
+}
+
+h1 {
+	text-align: center;
+}
+
+button {
+	background-color: antiquewhite;
+	border: none;
+	padding: 8px;
+	border-radius: 15px;
+}
+
+.valgt {
+	border: solid 0.5px #2b2b2b;
+	background-color: chocolate;
+}
+
+section {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-gap: 10px;
+
+}
+
+article {
+	padding: 10px;
+	border: solid 0.5px;
+	border-radius: 15px;
+}
