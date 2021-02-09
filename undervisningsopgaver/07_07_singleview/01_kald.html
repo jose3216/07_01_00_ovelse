@@ -45,7 +45,6 @@
 			color: aliceblue;
 
 		}
-
 	</style>
 
 </head>
@@ -63,10 +62,15 @@
 
 	<template>
 		<article class="person">
+			<img src="" alt="" class="profil-billede">
 			<h2 class="navn"></h2>
 			<p class="køn"></p>
-			<img src="" alt="" class="profil-billede">
+			<p class="profession"></p>
+			<p class="birth"></p>
 		</article>
+
+
+
 	</template>
 
 
@@ -122,7 +126,15 @@
 					const klon = skabelon.cloneNode(true);
 					klon.querySelector(".navn").textContent = person.fornavn + " " + person.efternavn;
 					klon.querySelector(".profil-billede").src = medieurl + person.billede;
+					klon.querySelector(".profession").textContent = person.titel;
+
 					klon.querySelector(".person").addEventListener("click", () => visDetaljer(person));
+
+					const string = person.fødselsdag;
+					const pattern = /[0-9][0-9][0-9][0-9][-][0-9][0-9][-][0-9][0-9]/;
+					const result = string.match(pattern);
+					klon.querySelector(".birth").textContent = result;
+
 					dest.appendChild(klon);
 				}
 			})
@@ -131,8 +143,5 @@
 		function visDetaljer(hvem) {
 			location.href = `02_detaljer.html?id=${hvem._id}`;
 		}
-
 	</script>
-</body>
-
-</html>
+</body></html>
