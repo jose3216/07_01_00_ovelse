@@ -46,7 +46,7 @@ function visRetter() {
 			const klon = template.cloneNode(true);
 			klon.querySelector(".pic").src = medieurl + ret.billede;
 			klon.querySelector(".navn").textContent = ret.navn;
-			klon.querySelector(".pris").textContent = ret.pris;
+			klon.querySelector(".pris").textContent = "Pris: " + ret.pris + " kr.";
 			klon.querySelector(".k_tekst").textContent = ret.kortbeskrivelse;
 			section.appendChild(klon);
 		}
