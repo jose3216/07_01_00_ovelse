@@ -65,12 +65,8 @@
 			<img src="" alt="" class="profil-billede">
 			<h2 class="navn"></h2>
 			<p class="køn"></p>
-			<p class="profession"></p>
 			<p class="birth"></p>
 		</article>
-
-
-
 	</template>
 
 
@@ -126,7 +122,6 @@
 					const klon = skabelon.cloneNode(true);
 					klon.querySelector(".navn").textContent = person.fornavn + " " + person.efternavn;
 					klon.querySelector(".profil-billede").src = medieurl + person.billede;
-					klon.querySelector(".profession").textContent = person.titel;
 
 					klon.querySelector(".person").addEventListener("click", () => visDetaljer(person));
 

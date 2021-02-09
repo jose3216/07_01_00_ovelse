@@ -5,16 +5,95 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title></title>
-	<link rel="stylesheet" href="">
+	<style>
+		* {
+			margin: auto, 0;
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		article {
+			display: grid;
+			grid-template-columns: 1fr 2fr;
+		}
+
+		#tekst {
+			padding: 10px;
+		}
+
+		button {
+			border-radius: 25px;
+			border: darkblue;
+			background-color: skyblue;
+		}
+
+		button:hover {
+			background-color: darkblue;
+			color: papayawhip;
+		}
+
+	</style>
 </head>
 
 <body>
+
 	<article class="person">
-		<h2 class="navn"></h2>
-		<p class="køn"></p>
-		<img src="" alt="" class="profil-billede">
+		<div id="tekst">
+			<h2 class="navn"></h2>
+			<p class="birth"></p>
+			<p class="profession"></p>
+			<p class="hobby"></p>
+		</div>
+		<img src="" alt="" class="billede">
+
 	</article>
-	<script></script>
+	<button>Tilbage</button>
+
+	<script>
+		const urlParams = new URLSearchParams(window.location.search);
+		const id = urlParams.get("id");
+
+		const mediaurl = "https://persongalleri-5d3e.restdb.io/media/";
+		const myHeaders = {
+
+			"x-apikey": "600fe9211346a1524ff12e31"
+		}
+		console.log("ID", id);
+		document.addEventListener("DOMContentLoaded", loadJSON);
+		let personer;
+
+
+
+		async function loadJSON() {
+			const JSONData = await fetch(`https://persongalleri-5d3e.restdb.io/rest/persongalleri/${id}`, {
+				headers: myHeaders
+			});
+			person = await JSONData.json();
+			console.log("Personer", person);
+			visPerson(person);
+		}
+
+		function visPerson() {
+			document.querySelector(".billede").src = mediaurl + person.billede;
+			document.querySelector(".navn").textContent = `${person.fornavn} ${person.efternavn}`;
+			document.querySelector(".profession").textContent = person.titel;
+			document.querySelector(".hobby").textContent = `Får fritiden til at gå med: ${person.hobby}`;
+
+			const string = person.fødselsdag;
+			const pattern = /[0-9][0-9][0-9][0-9][-][0-9][0-9][-][0-9][0-9]/;
+			const result = string.match(pattern);
+			document.querySelector(".birth").textContent = result;
+
+			document.querySelector("button").addEventListener("click", tilbageKnap);
+		}
+
+		function tilbageKnap() {
+			history.back();
+		}
+
+	</script>
 </body>
 
 </html>
