@@ -48,8 +48,15 @@ function visRetter() {
 			klon.querySelector(".navn").textContent = ret.navn;
 			klon.querySelector(".pris").textContent = "Pris: " + ret.pris + " kr.";
 			klon.querySelector(".k_tekst").textContent = ret.kortbeskrivelse;
+
+			klon.querySelector(".retten").addEventListener("click", () => visDetaljer(ret));
+
 			section.appendChild(klon);
 		}
 	})
 
+}
+
+function visDetaljer(hvilken) {
+	location.href = `singelview.html?id=${hvilken._id}`;
 }
