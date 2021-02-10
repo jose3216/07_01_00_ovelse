@@ -6,29 +6,104 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title class="navn"></title>
 	<style>
-		body {
-			margin: 15px, auto;
-			align-content: center;
+		* {
+			margin: 0;
 		}
 
-		article {}
+		#logo {
+			margin: 1em;
+			position: absolute;
 
-		h1 {}
+		}
+
+		body {
+			margin: 0, auto;
+			background: rgb(14, 25, 34);
+			background: linear-gradient(125deg, rgba(14, 25, 34, 1) 22%, rgba(63, 95, 128, 1) 100%);
+		}
+
+		img {
+			max-width: 80%;
+			align-items: center;
+		}
+
+		.container {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			margin: 10em;
+		}
+
+
+		h1 {
+			text-align: center;
+			font-family: 'Roboto Slab', serif;
+			font-weight: 400px;
+			color: #D99873;
+			font-size: 5em;
+		}
+
+		h3 {
+			padding-bottom: 0.3em;
+			font-family: 'Roboto Slab', serif;
+			font-weight: 200px;
+			color: #D99873;
+			font-size: 2em;
+		}
+
+		p {
+			padding-bottom: 0.5em;
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 100px;
+			color: #D99873;
+			font-size: 1em;
+		}
+
+
+		button {
+			align-items: center;
+			background-color: #D99873;
+			border: none;
+			padding: 8px;
+			border-radius: 15px;
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 900px;
+			margin-top: 5em;
+		}
+
+		button:hover {
+			border: solid #F2622E;
+		}
+
+		footer {
+			text-align: center;
+			color: #D99873;
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 300px;
+			padding: 0.5em;
+			font-size: 12px;
+			line-height: 20px;
+		}
+
 	</style>
 </head>
 
 <body>
+	<div id="logo"><a href="index.html"><img src="logo.svg" alt=""></a></div>
 
 	<article class="retten">
 		<h1 class="ret">Retten</h1>
-		<img src="" alt="" class="pic">
-		<div class="br_tekst">
-			<h3 class="pris"></h3>
-			<p class="oprindelse"></p>
-			<p class="l_tekst"></p>
-			<button class="detaljer">Tilbage</button>
+		<div class="container">
+			<img src="" alt="" class="pic">
+			<div class="br_tekst">
+				<h3 class="pris"></h3>
+				<p class="oprindelse"></p>
+				<p class="l_tekst"></p>
+				<button class="detaljer">Tilbage</button>
+			</div>
 		</div>
+
 	</article>
+	<footer>©Copyright. <br>All rights reserved</footer>
 
 	<script>
 		const urlParams = new URLSearchParams(window.location.search);
@@ -72,5 +147,8 @@
 		function tilbageTilMenu() {
 			history.back();
 		}
+
 	</script>
-</body></html>
+</body>
+
+</html>

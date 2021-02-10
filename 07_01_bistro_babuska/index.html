@@ -5,30 +5,64 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Bistro Babushka</title>
+
+	<!--Favicon-->
+	<link rel="apple-touch-icon" sizes="180x180" href="babuskha_fav/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="babuskha_fav/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="babuskha_fav/favicon-16x16.png">
+	<link rel="manifest" href="babuskha_fav/site.webmanifest">
+	<link rel="mask-icon" href="babuskha_fav/safari-pinned-tab.svg" color="#05a696">
+	<meta name="msapplication-TileColor" content="#05a696">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--Fonte-->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;700&display=swap" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+
+
+	<!--Stylesheet-->
 	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+	<header>
+		<div id="logo"><a href="index.html"><img src="logo.svg" alt=""></a></div>
+		<div id="titel">
+			<p class="bistro">bistro</p>
+			<h2 class="titlen">BABUSHKA</h2>
+		</div>
+	</header>
 
-	<h1>Menu</h1>
-	<nav>
-		<button data-kategori="alle" class="valgt" ;>Alle</button>
-		<button data-kategori="forretter" ;>Forretter</button>
-		<button data-kategori="hovedretter" ;>Hovedretter</button>
-		<button data-kategori="desserter" ;>Desserter</button>
+	<nav id="liste">
+		<div data-kategori="alle" class="valgt knap" ;>Alle</div>
+		<div data-kategori="sideorders" class="knap" ;>Tilbehør</div>
+		<div data-kategori="forretter" class="knap" ;>Forretter</div>
+		<div data-kategori="hovedretter" class="knap" ;>Hovedretter</div>
+		<div data-kategori="desserter" class="knap" ;>Desserter</div>
+		<div data-kategori="drikkevarer" class="knap" ;>Drinks</div>
 	</nav>
-
+	<h1>Menu</h1>
 	<section></section>
 
 	<template>
 		<article class="retten">
 			<img src="" alt="" class="pic">
-			<h2 class="navn"></h2>
-			<h3 class="pris"></h3>
-			<p class="k_tekst"></p>
-			<button class="detaljer">Se detaljer</button>
+			<div class="fyld">
+				<h2 class="navn"></h2>
+				<h3 class="pris"></h3>
+				<p class="k_tekst"></p>
+				<div id="knapend">
+					<button class="detaljer">Se detaljer</button>
+				</div>
+			</div>
 		</article>
 	</template>
-
+	<footer>©Copyright. <br>All rights reserved</footer>
 	<script src="javaScript.js"></script>
-</body></html>
+
+</body>
+
+</html>

@@ -1,5 +1,46 @@
+* {
+	margin: 0;
+
+}
+
+
+#logo {
+	display: flex;
+	align-content: flex-start;
+	position: absolute;
+
+}
+
+#titel {
+	text-align: center;
+	color: #D99873;
+
+}
+
+.bistro {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 100px;
+	text-align: center;
+	letter-spacing: 80px;
+	font-size: 3em;
+}
+
+.titlen {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300px;
+	text-align: center;
+	font-size: 10em;
+}
+
+header {
+	padding-left: 1em;
+	padding-top: 1em;
+}
+
 body {
-	margin: 2em;
+	background: rgb(14, 25, 34);
+	background: linear-gradient(125deg, rgba(14, 25, 34, 1) 22%, rgba(63, 95, 128, 1) 100%);
+
 }
 
 img {
@@ -8,41 +49,100 @@ img {
 
 nav {
 	margin-bottom: 5em;
+	padding-left: 1em;
 }
 
 h1 {
-	text-align: center;
+	color: #D99873;
+	padding-left: 1em;
+}
+
+#liste {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
 }
 
 button {
-	background-color: antiquewhite;
+	background-color: #D99873;
+	color: #2b2b2b;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 900px;
+	border-radius: 25px;
 	border: none;
-	padding: 8px;
-	border-radius: 15px;
+	padding: 0.4em;
+}
+
+button:hover {
+	border: solid #05A696 1.5px;
+}
+
+.knap {
+	color: #D99873;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 900px;
+}
+
+.knap:hover {
+	color: #F2622E;
 }
 
 .valgt {
-	border: solid 0.5px #2b2b2b;
-	background-color: chocolate;
+	border-bottom: solid #F2622E;
 }
 
 section {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	grid-gap: 10px;
-
+	grid-gap: 20px;
+	padding: 50px;
 }
 
 article {
-	border: solid 0.5px;
 	border-radius: 15px;
-	padding: 10px;
+	padding: 1em;
+	background-color: rgba(242, 97, 44);
+	opacity: 85%;
 }
 
-/*
-article .navn,
-.pris,
-.k_tekst {
-	padding-left: 10px;
+article:hover {
+	opacity: 100%;
 }
-*/
+
+h1 {
+	font-family: 'Roboto Slab', serif;
+	font-weight: 400px;
+
+}
+
+h2 {
+	padding-bottom: 0.3em;
+	font-family: 'Roboto Slab', serif;
+	font-weight: 300px;
+}
+
+h3 {
+	padding-bottom: 0.3em;
+	font-family: 'Roboto Slab', serif;
+	font-weight: 200px;
+}
+
+p {
+	padding-bottom: 0.5em;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 100px;
+}
+
+.detaljer {
+	align-self: flex-end;
+}
+
+footer {
+	text-align: center;
+	color: #D99873;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300px;
+	padding: 0.5em;
+	font-size: 12px;
+	line-height: 20px;
+}

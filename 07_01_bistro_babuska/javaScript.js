@@ -9,10 +9,11 @@ let retter;
 let filter = "alle";
 
 function start() {
-	const filterknapper = document.querySelectorAll("nav button");
+	const filterknapper = document.querySelectorAll(".knap");
 	filterknapper.forEach(knap => knap.addEventListener("click", filtreRetter))
 	loadJSON();
 }
+
 
 function filtreRetter() {
 	filter = this.dataset.kategori;
